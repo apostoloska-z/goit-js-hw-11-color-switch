@@ -27,10 +27,10 @@ function changeColor () {
 function activateBtns() {
     const intervalId = setInterval(()=> {
         changeColor()
-        btnStartRef.removeEventListener('click', activateBtns);
+        btnStartRef.setAttribute('disabled', true);
         btnStopRef.addEventListener('click', () => {
             clearInterval(intervalId);
-            btnStartRef.addEventListener('click', activateBtns);
+            btnStartRef.removeAttribute('disabled');
         })
     }, 1000)
   
